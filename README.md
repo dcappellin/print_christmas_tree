@@ -24,4 +24,4 @@ Examples:
     *@@***@@*@*
          #
         
-Happy Christamas!
+Happy Christmas!
