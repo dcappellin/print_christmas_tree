@@ -1,8 +1,9 @@
 import argparse
 import random
 
+
 #
-# Print you Python Xmas tree :)
+# Print your Python Xmas tree :)
 #
 # python christmas_tree(10)
 #
@@ -15,7 +16,6 @@ import random
 #      #
 #
 def print_christmas_tree(tree_base_size: int) -> None:
-
     tree_base_size = tree_base_size + 1 if tree_base_size % 2 == 0 else tree_base_size
     steps = 1
     whites = tree_base_size // 2
