@@ -15,21 +15,31 @@ import random
 # @*@@*@*****
 #      #
 #
+
+class BColors:
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    DARKYELLOW = '\033[33m'
+    ENDC = '\033[0m'
+
+
 def print_christmas_tree(tree_base_size: int) -> None:
     tree_base_size = tree_base_size + 1 if tree_base_size % 2 == 0 else tree_base_size
     steps = 1
     whites = tree_base_size // 2
 
+    print(' ' * whites + f'{BColors.YELLOW}★{BColors.ENDC}')
+
     while steps <= tree_base_size:
-        decoration = [char for char in ('*' * steps)]
+        decoration = [char for char in (f'*' * steps)]
         for i in range(len(decoration) // 2):
-            decoration[int(random.random() * len(decoration))] = '\033[31m@\033[0;0m'
+            decoration[int(random.random() * len(decoration))] = f'{BColors.RED}@{BColors.ENDC}'
 
         print(' ' * whites + ''.join(decoration))
         steps = steps + 2
         whites = whites - 1
 
-    print(' ' * (tree_base_size // 2) + '\033[33m#\033[0;0m')
+    print(' ' * (tree_base_size // 2) + f'{BColors.DARKYELLOW}#{BColors.ENDC}')
 
 
 if __name__ == '__main__':
